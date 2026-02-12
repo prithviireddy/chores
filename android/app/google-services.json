@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482458691013",
+    "project_id": "flatchore",
+    "storage_bucket": "flatchore.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482458691013:android:74c65c5e2cc74b345a97ac",
+        "android_client_info": {
+          "package_name": "com.example.flat_chore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482458691013-uja0e38r5jh77568qnbtl22rt8gms7re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_hDJNhG4dylvhLWJqq5JbjjsQirKcnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482458691013-uja0e38r5jh77568qnbtl22rt8gms7re.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
