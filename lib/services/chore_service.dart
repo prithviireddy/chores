@@ -1,8 +1,6 @@
 import 'dart:math';
-import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/chore_model.dart';
-import '../models/user_model.dart';
 
 class ChoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -68,6 +66,12 @@ class ChoreService {
         'lastCompletedAt': Timestamp.fromDate(now),
         'lastCompletedBy': userId,
       });
+    });
+    
+    // Save completion history to subcollection
+    await choreRef.collection('completions').add({
+      'completedBy': userId,
+      'completedAt': Timestamp.fromDate(DateTime.now()),
     });
   }
 

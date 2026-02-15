@@ -1,6 +1,5 @@
 import 'package:flat_chore/models/flat_model.dart';
 import 'package:flat_chore/models/user_model.dart';
-import 'package:flat_chore/screens/auth/login_screen.dart';
 import 'package:flat_chore/screens/flat/create_flat_screen.dart';
 import 'package:flat_chore/screens/flat/join_flat_screen.dart';
 import 'package:flat_chore/services/auth_service.dart';
@@ -163,7 +162,7 @@ class _FlatDrawerState extends State<FlatDrawer> {
                        ],
                      ),
                      onTap: () => _switchFlat(flat.id),
-                   )).toList(),
+                   )),
                    const Divider(),
                    ListTile(
                      leading: const Icon(Icons.add),

@@ -77,12 +77,10 @@ final ThemeData appTheme = ThemeData(
     primary: AppColors.primaryPurple,
     secondary: AppColors.accentPink,
     surface: AppColors.cardBg,
-    background: AppColors.lightBg,
     error: AppColors.error,
     onPrimary: Colors.white,
     onSecondary: Colors.white,
     onSurface: AppColors.textPrimary,
-    onBackground: AppColors.textPrimary,
   ),
   
   scaffoldBackgroundColor: AppColors.lightBg,

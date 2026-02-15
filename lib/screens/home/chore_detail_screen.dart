@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 class ChoreDetailScreen extends StatefulWidget {
   final ChoreModel chore;
   final String currentUserId;
+  final String flatId;
   final Map<String, String> memberNames;
   final bool isAdmin;
   final VoidCallback? onComplete;
@@ -19,6 +20,7 @@ class ChoreDetailScreen extends StatefulWidget {
     super.key,
     required this.chore,
     required this.currentUserId,
+    required this.flatId,
     required this.memberNames,
     required this.isAdmin,
     this.onComplete,
@@ -45,8 +47,9 @@ class _ChoreDetailScreenState extends State<ChoreDetailScreen> {
   Future<void> _loadCompletionHistory() async {
     try {
       // Fetch completion history from Firestore
-      // Assuming you have a subcollection 'completions' under each chore
       final snapshot = await FirebaseFirestore.instance
+          .collection('flats')
+          .doc(widget.flatId)
           .collection('chores')
           .doc(widget.chore.id)
           .collection('completions')
@@ -435,6 +438,7 @@ class _ChoreDetailScreenState extends State<ChoreDetailScreen> {
                         builder: (context) => UserCompletionHistoryScreen(
                           userId: completedBy,
                           userName: userName,
+                          flatId: widget.flatId,
                           choreId: widget.chore.id,
                         ),
                       ),
@@ -568,12 +572,14 @@ class _ChoreDetailScreenState extends State<ChoreDetailScreen> {
 class UserCompletionHistoryScreen extends StatelessWidget {
   final String userId;
   final String userName;
+  final String flatId;
   final String choreId;
 
   const UserCompletionHistoryScreen({
     super.key,
     required this.userId,
     required this.userName,
+    required this.flatId,
     required this.choreId,
   });
 
@@ -600,6 +606,8 @@ class UserCompletionHistoryScreen extends StatelessWidget {
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance
+            .collection('flats')
+            .doc(flatId)
             .collection('chores')
             .doc(choreId)
             .collection('completions')

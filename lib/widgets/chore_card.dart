@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 class ChoreCard extends StatefulWidget {
   final ChoreModel chore;
   final String currentUserId;
+  final String flatId;
   final Map<String, String>? memberNames;
   final bool isAdmin;
   final VoidCallback? onComplete;
@@ -19,6 +20,7 @@ class ChoreCard extends StatefulWidget {
     super.key,
     required this.chore,
     required this.currentUserId,
+    required this.flatId,
     this.memberNames,
     this.isAdmin = false,
     this.onComplete,
@@ -105,6 +107,7 @@ class _ChoreCardState extends State<ChoreCard> with SingleTickerProviderStateMix
               builder: (context) => ChoreDetailScreen(
                 chore: widget.chore,
                 currentUserId: widget.currentUserId,
+                flatId: widget.flatId,
                 memberNames: widget.memberNames ?? {},
                 isAdmin: widget.isAdmin,
                 onComplete: widget.onComplete,

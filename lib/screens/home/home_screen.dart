@@ -348,6 +348,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                         return ChoreCard(
                           chore: chores[index], 
                           currentUserId: widget.user.uid,
+                          flatId: widget.user.currentFlatId!,
                           memberNames: _memberNames,
                           isAdmin: isAdmin,
                           onComplete: () async {

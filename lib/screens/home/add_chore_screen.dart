@@ -37,7 +37,6 @@ class _AddChoreScreenState extends State<AddChoreScreen> {
         flatMembers = await _flatService.getFlatMembers(widget.user.currentFlatId!);
         selectedMemberIds = flatMembers.map((u) => u.uid).toList();
       }
-    } catch (e) {
     } finally {
       if (mounted) setState(() => fetchingMembers = false);
     }
@@ -73,7 +72,7 @@ class _AddChoreScreenState extends State<AddChoreScreen> {
             Padding(
                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                child: DropdownButtonFormField<String>(
-                 value: frequency,
+                 initialValue: frequency,
                  items: ['Daily', 'Weekly', 'Monthly'].map((f) => DropdownMenuItem(value: f, child: Text(f))).toList(),
                  onChanged: (val) => setState(() => frequency = val!),
                  decoration: const InputDecoration(labelText: 'Frequency'),
