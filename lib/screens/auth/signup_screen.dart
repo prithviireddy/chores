@@ -103,7 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                       ShaderMask(
                         shaderCallback: (bounds) => AppColors.accentGradient.createShader(bounds),
                         child: const Text(
-                          'Join FlatChore',
+                          'Join Chores',
                           style: TextStyle(
                             fontSize: 42,
                             fontWeight: FontWeight.bold,

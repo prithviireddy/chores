@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                       ShaderMask(
                         shaderCallback: (bounds) => AppColors.primaryGradient.createShader(bounds),
                         child: const Text(
-                          'FlatChore',
+                          'Chores',
                           style: TextStyle(
                             fontSize: 48,
                             fontWeight: FontWeight.bold,

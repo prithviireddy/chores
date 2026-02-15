@@ -143,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         title: ShaderMask(
           shaderCallback: (bounds) => AppColors.primaryGradient.createShader(bounds),
           child: Text(
-            _currentFlat?.name ?? 'FlatChore',
+            _currentFlat?.name ?? 'Chores',
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
